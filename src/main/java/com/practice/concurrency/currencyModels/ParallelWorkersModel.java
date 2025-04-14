@@ -4,7 +4,6 @@ import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.TimeUnit;
 
-// This is the Task class, declared outside main class (not static inner class)
 class Task implements Runnable {
     private final int taskId;
 
@@ -28,13 +27,15 @@ class Task implements Runnable {
 public class ParallelWorkersModel {
     public static void main(String[] args) throws InterruptedException {
 
-        int numberOfWorkers = 4;   // Number of parallel threads
+        int numberOfWorkers = 2;   // Number of parallel threads
         int numberOfTasks = 10;    // Total tasks to submit
 
         // Create a thread pool with 4 workers
         ExecutorService executor = Executors.newFixedThreadPool(numberOfWorkers);
+        //Start timer
+        long startTime = System.nanoTime();
 
-        // Submit 10 tasks (delegator)
+        //Submit 10 tasks (delegator)
         for (int i = 1; i <= numberOfTasks; i++) {
             Task task = new Task(i);       // Create a task
             executor.submit(task);         // Send it to worker pool
@@ -43,11 +44,15 @@ public class ParallelWorkersModel {
         executor.shutdown(); // No more tasks will be accepted
         //Wait up to 1 minute for tasks to complete
         boolean finished = executor.awaitTermination(1, TimeUnit.MINUTES);
+        long endTime = System.nanoTime();
+        //Calculate total time in milliseconds
+        long totalTimeMillis = (endTime - startTime) / 1000000;
 
         if (finished) {
             System.out.println("======All tasks completed within the timeout.======");
         } else {
             System.out.println("======Timeout reached. Some tasks may not have finished.======");
         }
+        System.out.println("🕒 Total time taken: " + totalTimeMillis + " ms");
     }
 }
