@@ -4,10 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="04e2ccb9-cfb4-45d4-823c-8394a0f4465a" name="Changes" comment="Corrected the git username">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/practice/concurrency/currencyModels/ParallelWorkersModel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/java/Main.java" beforeDir="false" />
+    <list default="true" id="04e2ccb9-cfb4-45d4-823c-8394a0f4465a" name="Changes" comment="Parallel Workers Concurrency Model">
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -119,7 +117,15 @@
       <option name="project" value="LOCAL" />
       <updated>1744620518170</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Parallel Workers Concurrency Model">
+      <option name="closed" value="true" />
+      <created>1744621598181</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1744621598181</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -136,7 +142,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Initial" />
     <MESSAGE value="Corrected the git username" />
-    <option name="LAST_COMMIT_MESSAGE" value="Corrected the git username" />
+    <MESSAGE value="Parallel Workers Concurrency Model" />
+    <option name="LAST_COMMIT_MESSAGE" value="Parallel Workers Concurrency Model" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -145,6 +152,10 @@
           <url>file://$PROJECT_DIR$/src/main/java/com/practice/Main.java</url>
           <line>3</line>
           <option name="timeStamp" value="1" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>jar://$USER_HOME$/.jdks/temurin-17.0.14/lib/src.zip!/java.base/java/lang/Runnable.java</url>
+          <option name="timeStamp" value="2" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
