@@ -27,10 +27,10 @@ class Task implements Runnable {
 public class ParallelWorkersModel {
     public static void main(String[] args) throws InterruptedException {
 
-        int numberOfWorkers = 2;   // Number of parallel threads
+        int numberOfWorkers = 10;   // Number of parallel threads
         int numberOfTasks = 10;    // Total tasks to submit
 
-        // Create a thread pool with 4 workers
+        // Create a thread pool with workers
         ExecutorService executor = Executors.newFixedThreadPool(numberOfWorkers);
         //Start timer
         long startTime = System.nanoTime();
@@ -49,10 +49,10 @@ public class ParallelWorkersModel {
         long totalTimeMillis = (endTime - startTime) / 1000000;
 
         if (finished) {
-            System.out.println("======All tasks completed within the timeout.======");
+            System.out.println("======All tasks completed within the timeout.====== " + Thread.currentThread().getName());
         } else {
-            System.out.println("======Timeout reached. Some tasks may not have finished.======");
+            System.out.println("======Timeout reached. Some tasks may not have finished.====== " + Thread.currentThread().getName());
         }
-        System.out.println("🕒 Total time taken: " + totalTimeMillis + " ms");
+        System.out.println("Total time taken: " + totalTimeMillis + " ms " + Thread.currentThread().getName());
     }
 }
